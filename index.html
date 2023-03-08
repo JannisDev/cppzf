@@ -1,0 +1,175 @@
+<head>
+    <meta charset="UTF-8">
+    <link href="./prism.css" rel="stylesheet" />
+</head>
+<h1>C++ CheatSheet</h1>
+<p>Zusammenfassung der wichtigsten c++ elemente.</p>
+<br>
+
+<h2>Programmstruktur</h2>
+<div>
+<p>Das Programm läuft zeilenweise von oben nach unten ab:</p>
+<pre><code class="language-cpp">
+#include &ltiostream>
+
+int main() {
+    // Code ...
+    return 0;
+}
+</code></pre>
+<p>Die erste Zeile inkludiert eine Headerdatei welche für die ein und ausgabe im Programm wichtig ist. Sie wird daher immer benötigt.</p>
+<p>Die Funktion <code class="language-cpp">main()</code> enthält alle Anweisungen für das Programm.<br>
+Da sie vom Typ Integer ist, muss sie auch einen zurückgeben. Daher steht am ende der Funktion <code class="language-cpp">return 0;</code>.</p>
+<br>
+</div>
+
+<h2>Kommentare</h2>
+<div>
+<p>Kommentare werden verwendet, um Abschnitte des Codes auszuschließen.</p>
+<p>Du wirst auch in diesem Dokument einige Komentare finden.</p>
+<br>
+
+<h3>Einzeilige Kommentare</h3>
+<div>
+<p>Einzeilige Kommentare werden verwendet um einzelne zeilen zu kommentieren:</p>
+<pre><code class="language-cpp">// Dies ist ein Kommentar</code></pre>
+
+<p>Dabei muss der Kommentar nicht immer am Zeilenanfang beginnen:</p>
+<pre><code class="language-cpp">return 0; // Dieser Kommentar steht nach einer Anweisung</code></pre>
+</div>
+<br>
+
+<h3>Mehrzeilige Kommentare</h3>
+<div>
+<p>Mehrzeilige Kommentare werden verwendet mehrere zeilen in einem Stück zu kommentieren:</p>
+<pre><code class="language-cpp">
+/*
+Dies ist ein Kommentar
+Und er hat mehrere Zeilen
+*/
+</code></pre>
+</div>
+<br>
+</div>
+
+<h2>Variablen</h2>
+<div>
+<p>Variablen werden verwendet, um verschiedenste Daten die zur ausführung des Programms benötigt werden zu speichern.</p>
+<p>Folgende sind die wichtigsten Variablen:</p>
+<pre><code class="language-cpp">
+int     // Ganzzahlvariable
+float   // Fließkomma-Variable mit einfacher Genauigkeit
+double  // Fließkomma-Variable mit doppelter Genauigkeit
+char    // Zeichenvariable
+bool    // Boolesche Variable
+struct  // Struktur mit benutzerdefinierten Feldern
+</code></pre>
+<br>
+<h3>Deklaration/ Initialisierung</h3>
+<div>
+<h4>Deklaration (Variable anlegen)</h4>
+<div>
+<p>Bevor eine Variable genutzt werden kann, muss sie Deklariert werden.<br>
+In folgendem Beispiel wird eine variable mit dem Datentyp <code class="language-cpp">int</code> und dem Namen <code class="language-cpp">myVariable</code> deklariert:</p>
+<pre><code class="language-cpp">int myVariable;</code></pre>
+</div>
+<br>
+
+<h4>Initialisierung (Wert Setzen)</h4>
+<div>
+<p>Die Initialisierung kann erst stattfinden, nachdem die Variable Deklariert wurde.<br>
+    In folgendem Beispiel wird dem zuvor erstellten Integer mit dem Namen <code class="language-cpp">myVariable</code> den wert <code class="language-cpp">43</code> gegeben:</p>
+<pre><code class="language-cpp">myVariable = 43;</code></pre>
+<p>Sollte dem Datentyp <code class="language-cpp">char</code> einen Wert zugewiesen werden, muss dieser in Hochkommata geschrieben werden:</p>
+<pre><code class="language-cpp">myChar = "a";</code></pre>
+<p>Bei Flieskommazahlen ist zu beachten dass die Zahl mit einem Punkt statt Komma geschrieben wird:</p>
+<pre><code class="language-cpp">myDouble = 6.9;</code></pre>
+</div>
+<br>
+
+<h4>Kombination</h4>
+<div>
+<p>Die Deklaration und Initialisierung kann auch in einem Schritt durchgeführt werden.<br>
+In folgendem Beispiel wird eine variable mit dem Datentyp <code class="language-cpp">float</code> und dem Namen <code class="language-cpp">myVariable</code> deklariert und gleichzeitig initialisiert:</p>
+<pre><code class="language-cpp">float myVariable = 6.9;</code></pre>
+</div>
+<br>
+</div>
+<br>
+
+<h3>Verwendung</h3>
+<div>
+<p>Nachdem die Variable erfolgreich deklariert und initialisiert wurde, kann Sie im Code einfach durch Ihren namen aufgerufen werden.</p>
+<p>In folgendem Beispiel wird in der <code class="language-cpp">main()</code> Funktion eine Variable des Datentyps <code class="language-cpp">int</code> mit dem Namen <code class="language-cpp">rueckgabewert</code> und<br>
+dem Wert <code class="language-cpp">0</code> erzeugt und am ende der Funktion zurückgegeben:</p>
+<pre><code class="language-cpp">
+int main() {
+    int rueckgabewert = 0;
+
+    return rueckgabewert;
+}
+</code></pre>
+</div>
+</div>
+<br>
+
+<h2>Bedingungen und Logik</h2>
+<div>
+<p>Um in einem Programm Logik zu verwenden gibt es verschiedene möglichkeiten.</p>
+<br>
+
+<h3>If-/ Else-Blöcke</h3>
+<div>
+<h4>If</h4>
+<div>
+<p>Ein If-Block wird dazu verwendet um bestimmten Code nur dann auszuführen wenn eine Bedingung erfüllt ist.<br/>
+Dabei kann beispielsweise eine Variable auf Ihren inhalt überprüft werden.</p>
+<pre><code class="language-cpp">
+if (myInteger == 420) {
+    // Code wird ausgeführt wenn myInteger den Wert 420 hat.
+}
+</code></pre>
+<p>In einem If-Block können folgende Vergleichsoperatoren verwendet werden:</p>
+<pre><code class="language-cpp">
+==  // Wert a ist exakt Wert b                  Bsp. (myVariable == 420)
+!=  // Wert a ist nicht Wert b                  Bsp. (myVariable != 420)
+<   // Wert a kleiner als Wert b                Bsp. (myVariable < 420)
+<=  // Wert a kleiner als oder exakt Wert b     Bsp. (myVariable <= 420)
+>   // Wert a größer als Wert b                 Bsp. (myVariable > 420)
+>=  // Wert a größer als oder exakt Wert b      Bsp. (myVariable <= 420)
+</code> </pre>
+<p>Außerdem können mehrere vergleiche kombiniert werden.</p>
+<pre><code class="language-cpp">
+%%  // Vergleich a und b müssen 'true' sein     Bsp. (myVariable == 420 %% myChar == "a")
+||  // Vergleich a oder b müssen 'true' sein    Bsp. (myVariable == 420 || myVariable == 69)
+</code> </pre>
+</div>
+    <br>
+
+    <h4>Else</h4>
+    <div></div>
+</div>
+</div>
+
+
+<script src="./prism.js"></script>
+
+<style>
+    * {
+        font-family: Questrial, sans-serif;
+    }
+
+    body {
+        max-width: 1000px;
+        margin: auto;
+        padding: 40px 0;
+    }
+
+    div{
+        margin-left: 10px;
+    }
+
+    code > * {
+        font-family: monospace, sans-serif !important;
+    }
+</style>
