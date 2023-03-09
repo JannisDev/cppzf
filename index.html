@@ -1,12 +1,38 @@
+<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./prism.css" rel="stylesheet" />
 </head>
-<h1>C++ CheatSheet</h1>
+<aside id="aside" onclick="myFunction()">
+    <h1><a href="#programmstruktur">Programmstruktur</a></h1>
+    <p><a href="#programmstruktur">Programmstruktur</a></p>
+
+    <h1><a href="#kommentare">Kommentare</a></h1>
+    <p><a href="#ekommentare">Einzeilige Kommentare</a></p>
+    <p><a href="#mkommentare">Mehrzeilige Kommentare</a></p>
+
+    <h1><a href="#variablen">Variablen</a></h1>
+    <p><a href="#divariablen">Deklaration/ Initialisierung</a></p>
+    <p><a href="#vvariablen">Verwendung</a></p>
+
+    <h1><a href="#bedingungenul">Bedingungen und Logik</a></h1>
+    <p><a href="#iebedingungenul">If-/ Else-Blöcke</a></p>
+    <p><a href="#sbedingungenul">Switch</a></p>
+</aside>
+
+<div class="header">
+    <div id="header-button" class="header-button" onclick="myFunction()">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+</div>
+<h1 class="header-text">C++ CheatSheet</h1>
 <p>Zusammenfassung der wichtigsten c++ elemente.</p>
 <br>
 
-<h2>Programmstruktur</h2>
+<h2 id="programmstruktur">Programmstruktur</h2>
 <div>
 <p>Das Programm läuft zeilenweise von oben nach unten ab:</p>
 <pre><code class="language-cpp">
@@ -23,13 +49,13 @@ Da sie vom Typ Integer ist, muss sie auch einen zurückgeben. Daher steht am end
 <br>
 </div>
 
-<h2>Kommentare</h2>
+<h2 id="Kommentare">Kommentare</h2>
 <div>
 <p>Kommentare werden verwendet, um Abschnitte des Codes auszuschließen.</p>
 <p>Du wirst auch in diesem Dokument einige Komentare finden.</p>
 <br>
 
-<h3>Einzeilige Kommentare</h3>
+<h3 id="ekommentare">Einzeilige Kommentare</h3>
 <div>
 <p>Einzeilige Kommentare werden verwendet um einzelne zeilen zu kommentieren:</p>
 <pre><code class="language-cpp">// Dies ist ein Kommentar</code></pre>
@@ -39,7 +65,7 @@ Da sie vom Typ Integer ist, muss sie auch einen zurückgeben. Daher steht am end
 </div>
 <br>
 
-<h3>Mehrzeilige Kommentare</h3>
+<h3 id="mkommentare">Mehrzeilige Kommentare</h3>
 <div>
 <p>Mehrzeilige Kommentare werden verwendet mehrere zeilen in einem Stück zu kommentieren:</p>
 <pre><code class="language-cpp">
@@ -52,7 +78,7 @@ Und er hat mehrere Zeilen
 <br>
 </div>
 
-<h2>Variablen</h2>
+<h2 id="variablen">Variablen</h2>
 <div>
 <p>Variablen werden verwendet, um verschiedenste Daten die zur ausführung des Programms benötigt werden zu speichern.</p>
 <p>Folgende sind die wichtigsten Variablen:</p>
@@ -65,7 +91,7 @@ bool    // Boolesche Variable
 struct  // Struktur mit benutzerdefinierten Feldern
 </code></pre>
 <br>
-<h3>Deklaration/ Initialisierung</h3>
+<h3 id="divariablen">Deklaration/ Initialisierung</h3>
 <div>
 <h4>Deklaration (Variable anlegen)</h4>
 <div>
@@ -97,7 +123,7 @@ In folgendem Beispiel wird eine variable mit dem Datentyp <code class="language-
 </div>
 <br>
 
-<h3>Verwendung</h3>
+<h3 id="vvariablen">Verwendung</h3>
 <div>
 <p>Nachdem die Variable erfolgreich deklariert und initialisiert wurde, kann Sie im Code einfach durch Ihren namen aufgerufen werden.</p>
 <p>In folgendem Beispiel wird in der <code class="language-cpp">main()</code> Funktion eine Variable des Datentyps <code class="language-cpp">int</code> mit dem Namen <code class="language-cpp">rueckgabewert</code> und<br>
@@ -113,12 +139,12 @@ int main() {
 </div>
 <br>
 
-<h2>Bedingungen und Logik</h2>
+<h2 id="bedingungenul">Bedingungen und Logik</h2>
 <div>
 <p>Um in einem Programm Logik zu verwenden gibt es verschiedene möglichkeiten.</p>
 <br>
 
-<h3>If-/ Else-Blöcke</h3>
+<h3 id="iebedingungenul">If-/ Else-Blöcke</h3>
 <div>
 <h4>If</h4>
 <div>
@@ -142,34 +168,246 @@ if (myInteger == 420) {
 <pre><code class="language-cpp">
 %%  // Vergleich a und b müssen 'true' sein     Bsp. (myVariable == 420 %% myChar == "a")
 ||  // Vergleich a oder b müssen 'true' sein    Bsp. (myVariable == 420 || myVariable == 69)
-</code> </pre>
+</code></pre>
 </div>
-    <br>
+<br>
 
-    <h4>Else</h4>
-    <div></div>
+<h4>Else</h4>
+<div>
+<p>Ein Else-Block folgt immer unmittelbar nach einem If-Block und wird dann ausgeführt wenn die bedingung des If-Blocks nicht zutrifft.</p>
+<pre><code class="language-cpp">
+if (myVariable == 420) {
+    // Code wird ausgeführt wenn myVariable den Wert 420 hat.
+} else {
+    // Code wird ausgeführt wenn myVariable nicht den Wert 420 hat.
+}
+</code></pre>
 </div>
+<br>
+<h4>Else If</h4>
+<div>
+<p>Mit Else If können mehrere Abfragen hintereinander gekettet werden.<br>
+Somit kann eine weitere bedingung abgefragt werden, sollte die erste nicht zutreffen.</p>
+<pre><code class="language-cpp">
+if (myVariable == 420) {
+    // Code wird ausgeführt wenn myVariable den Wert 420 hat.
+} else if (myVariable == 69) {
+    // Code wird ausgeführt wenn myVariable den Wert 69 hat.
+} else {
+    // Code wird ausgeführt wenn myVariable nicht den Wert 420 oder 69 hat.
+}
+</code></pre>
+</div>
+</div>
+<br>
+
+<h3 id="sbedingungenul">Switch</h3>
+<div>
+<p>Mit einem Switch können mehrere bedingungen gleichzeitig abgefragt werden.<br>
+Beispiel eines Switch:</p>
+<pre><code class="language-cpp">
+switch (myVariable){
+    case 420:
+        // Code wird ausgeführt wenn myVariable den Wert 420 hat.
+        break;
+    case 69:
+        // Code wird ausgeführt wenn myVariable den Wert 69 hat.
+        break;
+    default:
+        // Code wird ausgeführt wenn myVariable nicht den Wert 420 oder 69 hat.
+        break;
+</code></pre>
+</div>
+
 </div>
 
 
 <script src="./prism.js"></script>
+<script>
+    function myFunction(x) {
+        document.getElementById('header-button').classList.toggle("change");
+        document.getElementById('aside').classList.toggle("opened");
+    }
+</script>
 
 <style>
     * {
         font-family: Questrial, sans-serif;
+        scroll-behavior: smooth;
     }
 
     body {
-        max-width: 1000px;
-        margin: auto;
-        padding: 40px 0;
+        margin: 0 5px 0 0;
     }
 
     div{
         margin-left: 10px;
     }
 
-    code > * {
+    code * {
         font-family: monospace, sans-serif !important;
     }
+
+    @media only screen and (max-width: 800px) {
+        .header {
+            display: flex;
+            position: fixed;
+            justify-content: end;
+            margin: 0 !important;
+            width: 100vw;
+            height: 45px;
+            top: 0;
+            z-index: 10000;
+        }
+
+        .header-button {
+            display: inline-block;
+            cursor: pointer;
+            z-index: 10000;
+            margin-right: 10px;
+        }
+
+        .bar1, .bar2, .bar3 {
+            width: 35px;
+            height: 5px;
+            background-color: #333;
+            margin: 6px 0;
+            transition: 0.4s;
+            z-index: 10000;
+        }
+
+        .change .bar1 {
+            transform: translate(0, 11px) rotate(-45deg);
+        }
+
+        .change .bar2 {opacity: 0;}
+
+        .change .bar3 {
+            transform: translate(0, -11px) rotate(45deg);
+        }
+
+        .header-text {
+            margin: 0;
+            padding-left: 15px;
+            line-height: 44px;
+        }
+
+        aside {
+            position: fixed;
+            height: 100vh;
+            width: 0vw;
+            background-color: white;
+            overflow: hidden;
+            z-index: 10000;
+            transition: width 0.3s;
+            white-space:nowrap;
+        }
+        .opened {
+            width: 100vw;
+        }
+        aside > * {
+            padding: 5px 10px;
+            height: 30px;
+            line-height: 30px;
+            margin: 0;
+        }
+
+        aside a {
+            text-decoration: none;
+            color: inherit;
+        }
+        aside p {
+            padding-left: 15px;
+        }
+
+        aside h1 {
+            font-size: 16px;
+            background-color: #358ccb;
+            color: white;
+        }
+
+        body > p:nth-child(0) {
+            margin-top: 50px;
+        }
+
+    }
+
+    @media only screen and (min-width: 800px) {
+        body {
+            margin-left: 300px;
+            padding: 10px 0;
+        }
+
+        aside {
+            width: 250px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            overflow: hidden;
+
+            position: fixed;
+            margin-top: 28px;
+            margin-left: -280px;
+        }
+
+        aside > * {
+            padding: 5px 10px;
+            height: 30px;
+            line-height: 30px;
+            margin: 0;
+        }
+
+        aside a {
+            text-decoration: none;
+            color: inherit;
+        }
+        aside p {
+            padding-left: 15px;
+        }
+
+        aside h1 {
+            font-size: 16px;
+            background-color: #358ccb;
+            color: white;
+        }
+    }
+
+    @media only screen and (min-width: 1750px) {
+       body {
+           max-width: 1000px;
+           margin: auto;
+           padding: 40px 0;
+       }
+
+       aside {
+           width: 250px;
+           border-radius: 8px;
+           box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+           overflow: hidden;
+
+           position: fixed;
+           margin-top: 28px;
+           margin-left: -350px;
+       }
+
+       aside > * {
+           padding: 5px 10px;
+           height: 30px;
+           line-height: 30px;
+           margin: 0;
+       }
+
+       aside a {
+           text-decoration: none;
+           color: inherit;
+       }
+       aside p {
+           padding-left: 15px;
+       }
+
+       aside h1 {
+           font-size: 16px;
+           background-color: #358ccb;
+           color: white;
+       }
+   }
 </style>
