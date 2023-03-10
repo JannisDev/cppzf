@@ -12,6 +12,9 @@
     <p><a href="#ekommentare">Einzeilige Kommentare</a></p>
     <p><a href="#mkommentare">Mehrzeilige Kommentare</a></p>
 
+    <h1><a href="#operatoren">Operatoren</a></h1>
+    <p><a href="#operatoren">Operatoren</a></p>
+
     <h1><a href="#variablen">Variablen</a></h1>
     <p><a href="#divariablen">Deklaration/ Initialisierung</a></p>
     <p><a href="#vvariablen">Verwendung</a></p>
@@ -19,6 +22,17 @@
     <h1><a href="#bedingungenul">Bedingungen und Logik</a></h1>
     <p><a href="#iebedingungenul">If-/ Else-Blöcke</a></p>
     <p><a href="#sbedingungenul">Switch</a></p>
+
+    <h1><a href="#schleifen">Schleifen</a></h1>
+    <p><a href="#while-schleife">While-Schleife</a></p>
+    <p><a href="#do-while-schleife">Do-While-Schleife</a></p>
+    <p><a href="#for-schleife">For-Schleife</a></p>
+
+    <h1><a href="#arrays">Arrays</a></h1>
+    <p><a href="#arrays">Arrays</a></p>
+
+    <h1><a href="#pointer">Pointer</a></h1>
+    <p><a href="#pointer">Pointer</a></p>
 </aside>
 
 <div class="header">
@@ -46,10 +60,10 @@ int main() {
 <p>Die erste Zeile inkludiert eine Headerdatei welche für die ein und ausgabe im Programm wichtig ist. Sie wird daher immer benötigt.</p>
 <p>Die Funktion <code class="language-cpp">main()</code> enthält alle Anweisungen für das Programm.<br>
 Da sie vom Typ Integer ist, muss sie auch einen zurückgeben. Daher steht am ende der Funktion <code class="language-cpp">return 0;</code>.</p>
-<br>
 </div>
+<br>
 
-<h2 id="Kommentare">Kommentare</h2>
+<h2 id="kommentare">Kommentare</h2>
 <div>
 <p>Kommentare werden verwendet, um Abschnitte des Codes auszuschließen.</p>
 <p>Du wirst auch in diesem Dokument einige Komentare finden.</p>
@@ -75,8 +89,25 @@ Und er hat mehrere Zeilen
 */
 </code></pre>
 </div>
-<br>
 </div>
+<br>
+
+<h2 id="operatoren">Operatoren</h2>
+<div>
+<p>Operatoren werden verwendet, um Datentypen zu verknüpfen oder zu verändern.</p>
+<p>Folgende sind die wichtigsten Operatoren:</p>
+<pre><code class="language-cpp">
+=       // Zuweisungsoperator
++       // Addition
+-       // Subtraktion
+*       // Multiplikation
+/       // Division
+%       // Modulo (Rest bei Division)
+++      // Inkrement (Erhöhung um 1)
+--      // Dekrement (Verringerung um 1)
+</code></pre>
+</div>
+<br>
 
 <h2 id="variablen">Variablen</h2>
 <div>
@@ -148,7 +179,7 @@ int main() {
 <div>
 <h4>If</h4>
 <div>
-<p>Ein If-Block wird dazu verwendet um bestimmten Code nur dann auszuführen wenn eine Bedingung erfüllt ist.<br/>
+<p>Ein If-Block wird dazu verwendet um eine Anweisung oder eine Gruppe von Anweisungen nur dann auszuführen wenn eine Bedingung erfüllt ist.<br/>
 Dabei kann beispielsweise eine Variable auf Ihren inhalt überprüft werden.</p>
 <pre><code class="language-cpp">
 if (myInteger == 420) {
@@ -218,7 +249,80 @@ switch (myVariable){
         break;
 </code></pre>
 </div>
+</div>
+<br>
 
+<h2 id="schleifen">Schleifen</h2>
+<div>
+<p>Schleifen werden verwendet, um eine Anweisung oder eine Gruppe von Anweisungen wiederholt auszuführen, solange eine Bedingung erfüllt ist.</p>
+
+<h3 id="while-schleife">While-Schleife</h3>
+<div>
+<p>Die while-Schleife führt eine Anweisung oder eine Gruppe von Anweisungen aus, solange die Bedingung wahr ist.<br>
+Dabei wird die Bedingung genau gleich gestaltet wie bei einem If-Block.</p>
+<pre><code class="language-cpp">
+    while (myBool) {
+    // Code ...
+}
+</code></pre>
+</div>
+
+<h3 id="do-while-schleife">Do-While-Schleife</h3>
+<div>
+<p>Die do-while-Schleife führt eine Anweisung oder eine Gruppe von Anweisungen mindestens einmal aus, und wiederholt sie solange die Bedingung wahr ist.</p>
+<pre><code class="language-cpp">
+do {
+    // Code ...
+} while (myBool);
+</code></pre>
+</div>
+
+<h3 id="for-schleife">For-Schleife</h3>
+<div>
+<p>Die for-Schleife wird verwendet, um eine Anweisung oder eine Gruppe von Anweisungen eine bestimmte Anzahl von Malen auszuführen.</p>
+<pre><code class="language-cpp">
+for (int i = 0; i <= 4; i++) {
+    // Code wird in diesem fall 5 mal ausgeführt.
+}
+</code></pre>
+</div>
+</div>
+<br>
+
+<h2 id="arrays">Arrays</h2>
+<div>
+<p>Ein Array ist eine Sammlung von Elementen desselben Datentyps, die durch einen gemeinsamen Namen und einen Index identifiziert werden.</p>
+<p>Arrays in C++ werden deklariert, indem der Datentyp und die Größe des Arrays angegeben werden. Die Größe des Arrays gibt an, wie viele Elemente es enthält.</p>
+<p>Arrays werden mit eckigen Klammern ([ ]) indiziert. Der Index beginnt bei 0 und endet bei der Größe des Arrays minus eins.</p>
+<p>Beispielcode:</p>
+<pre><code class="language-cpp">
+// Deklaration und Initialisierung eines Arrays
+Datentyp arrayName[Größe] = {Element1, Element2, ..., ElementN};
+
+// Zugriff auf ein Array-Element
+arrayName[Index] = Wert;
+</code></pre>
+<br>
+</div>
+<br>
+
+<h2 id="pointer">Pointer</h2>
+<div>
+<p>Ein Pointer ist eine Variable, die die Adresse eines anderen Objekts im Speicher speichert.</p>
+<p>Pointer in C++ werden deklariert, indem der Datentyp des Objekts angegeben wird, auf das der Pointer verweisen soll, gefolgt von einem Stern (*) und dem Namen des Pointers.</p>
+<p>Um den Wert, auf den der Pointer zeigt, zu erhalten, verwenden Sie den Dereferenzierungsoperator (*) vor dem Pointer-Namen.</p>
+<p>Beispielcode:</p>
+<pre><code class="language-cpp">
+// Deklaration eines Pointers
+Datentyp* pointerName;
+
+// Initialisierung eines Pointers
+Datentyp* pointerName = &VariableName;
+
+// Zugriff auf den Wert, auf den der Pointer zeigt
+*pointerName = Wert;
+</code></pre>
+<br>
 </div>
 
 
@@ -297,7 +401,8 @@ switch (myVariable){
             height: 100vh;
             width: 0vw;
             background-color: white;
-            overflow: hidden;
+            overflow-x: hidden;
+            overflow-y: auto;
             z-index: 10000;
             transition: width 0.3s;
             white-space:nowrap;
@@ -307,27 +412,26 @@ switch (myVariable){
         }
         aside > * {
             padding: 5px 10px;
-            height: 30px;
-            line-height: 30px;
+            height: 40px;
+            line-height: 40px;
             margin: 0;
         }
 
         aside a {
             text-decoration: none;
             color: inherit;
+            width: 100%;
+            display: inline-block;
+            padding: 0 15px;
         }
         aside p {
-            padding-left: 15px;
+            padding: 0;
         }
 
         aside h1 {
             font-size: 16px;
             background-color: #358ccb;
             color: white;
-        }
-
-        body > p:nth-child(0) {
-            margin-top: 50px;
         }
 
     }
@@ -359,6 +463,7 @@ switch (myVariable){
         aside a {
             text-decoration: none;
             color: inherit;
+            width: 100%;
         }
         aside p {
             padding-left: 15px;
@@ -399,6 +504,7 @@ switch (myVariable){
        aside a {
            text-decoration: none;
            color: inherit;
+           width: 100%;
        }
        aside p {
            padding-left: 15px;
