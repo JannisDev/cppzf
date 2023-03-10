@@ -9,15 +9,15 @@
     <p><a href="#programmstruktur">Programmstruktur</a></p>
 
     <h1><a href="#kommentare">Kommentare</a></h1>
-    <p><a href="#ekommentare">Einzeilige Kommentare</a></p>
-    <p><a href="#mkommentare">Mehrzeilige Kommentare</a></p>
+    <p><a href="#einzeilige-kommentare">Einzeilige Kommentare</a></p>
+    <p><a href="#mehrzeilige-kommentare">Mehrzeilige Kommentare</a></p>
 
     <h1><a href="#operatoren">Operatoren</a></h1>
     <p><a href="#operatoren">Operatoren</a></p>
 
     <h1><a href="#variablen">Variablen</a></h1>
-    <p><a href="#divariablen">Deklaration/ Initialisierung</a></p>
-    <p><a href="#vvariablen">Verwendung</a></p>
+    <p><a href="#deklaration-initialisierung">Deklaration/ Initialisierung</a></p>
+    <p><a href="#variablen-verwendung">Verwendung</a></p>
 
     <h1><a href="#bedingungen-und-logik">Bedingungen und Logik</a></h1>
     <p><a href="#if-else-bloecke">If-/ Else-Blöcke</a></p>
@@ -33,6 +33,17 @@
 
     <h1><a href="#pointer">Pointer</a></h1>
     <p><a href="#pointer">Pointer</a></p>
+
+    <h1><a href="#funktionen">Funktionen / Methoden</a></h1>
+    <p><a href="#funktionsdeklaration">Funktionsdeklaration</a></p>
+    <p><a href="#funktionsdefinition">Funktionsdefinition</a></p>
+    <p><a href="#funktionsaufruf">Funktionsaufruf</a></p>
+    <p><a href="#überladene-funktionen">Überladene Funktionen</a></p>
+
+    <h1><a href="#fehlerbehandlung-und-debugging">Fehlerbehandlung und Debugging</a></h1>
+    <p><a href="#try-catch-blocks">Try-Catch-Blöcke</a></p>
+    <p><a href="#assertions">Assertions</a></p>
+    <p><a href="#debugging-tools">Debugging-Tools</a></p>
 </aside>
 
 <div class="header">
@@ -68,7 +79,7 @@ int main() {
 <p>Du wirst auch in diesem Dokument einige Komentare finden.</p>
 <br>
 
-<h3 id="ekommentare">Einzeilige Kommentare</h3>
+<h3 id="einzeilige-kommentare">Einzeilige Kommentare</h3>
 <div>
 <p>Einzeilige Kommentare werden verwendet um einzelne zeilen zu kommentieren:</p>
 <pre><code class="language-cpp">// Dies ist ein Kommentar</code></pre>
@@ -78,7 +89,7 @@ int main() {
 </div>
 <br>
 
-<h3 id="mkommentare">Mehrzeilige Kommentare</h3>
+<h3 id="mehrzeilige-kommentare">Mehrzeilige Kommentare</h3>
 <div>
 <p>Mehrzeilige Kommentare werden verwendet mehrere zeilen in einem Stück zu kommentieren:</p>
 <pre><code class="language-cpp">
@@ -121,7 +132,7 @@ bool    // Boolesche Variable
 struct  // Struktur mit benutzerdefinierten Feldern
 </code></pre>
 <br>
-<h3 id="divariablen">Deklaration/ Initialisierung</h3>
+<h3 id="deklaration-initialisierung">Deklaration/ Initialisierung</h3>
 <div>
 <h4>Deklaration (Variable anlegen)</h4>
 <div>
@@ -153,7 +164,7 @@ In folgendem Beispiel wird eine variable mit dem Datentyp <code class="language-
 </div>
 <br>
 
-<h3 id="vvariablen">Verwendung</h3>
+<h3 id="variablen-verwendung">Verwendung</h3>
 <div>
 <p>Nachdem die Variable erfolgreich deklariert und initialisiert wurde, kann Sie im Code einfach durch Ihren namen aufgerufen werden.</p>
 <p>In folgendem Beispiel wird in der <code class="language-cpp">main()</code> Funktion eine Variable des Datentyps <code class="language-cpp">int</code> mit dem Namen <code class="language-cpp">rueckgabewert</code> und<br>
@@ -323,7 +334,92 @@ Datentyp* pointerName = &VariableName;
 </code></pre>
 <br>
 </div>
+<br>
+
+<h2 id="funktionen">Funktionen / Methoden</h2>
+<div>
+<p>Funktionen oder Methoden sind Abschnitte von Code, die eine spezielle Aufgabe ausführen und aufgerufen werden können, um diese Aufgabe zu erfüllen. Sie helfen bei der Strukturierung von Code und machen ihn leichter lesbar und wiederverwendbar.</p>
+<h3 id="funktionsdeklaration">Funktionsdeklaration</h3>
+<div>
+<p>Vor der Verwendung einer Funktion muss sie deklariert werden. Dabei wird der Name der Funktion, die Rückgabetyp, und die Parameterliste festgelegt.</p>
+<pre><code class="language-cpp">
+// Deklaration der Funktion add,
+// die zwei integer als Parameter erhält und einen integer als Rückgabewert hat.
+int add(int x, int y);
+</code></pre>
+<p>Eine funktion kann jeden Datentyp als Parameter annehmen und zurückgeben. Soll eine Funktion nichts zurückgeben, kann der Datentyp <code class="language-cpp">void</code> verwendet werden.</p>
 </div>
+
+<h3 id="funktionsdefinition">Funktionsdefinition</h3>
+<div>
+<p>Die Funktionsdefinition enthält den eigentlichen Code der Funktion. Hier wird festgelegt, welche Aufgabe die Funktion erfüllt und wie sie dies tut.</p>
+<pre><code class="language-cpp">
+// Definition der Funktion add, die zwei integer addiert und das Ergebnis zurückgibt.
+int add(int x, int y) {
+    return x + y;
+}
+</code></pre>
+</div>
+
+<h3 id="funktionsaufruf">Funktionsaufruf</h3>
+<div>
+<p>Um eine Funktion auszuführen, muss sie aufgerufen werden. Dabei werden die Argumente, die die Funktion benötigt, übergeben.</p>
+<pre><code class="language-cpp">
+// Aufruf der Funktion add mit den Argumenten 3 und 5.
+// Das Ergebnis wird in der Variablen summe gespeichert.
+int summe = add(3, 5);
+</code></pre>
+</div>
+
+<h3 id="überladene-funktionen">Überladene Funktionen</h3>
+<div>
+<p>Es ist möglich, Funktionen mit dem gleichen Namen zu definieren, aber unterschiedlichen Parameterlisten. Diese Funktionen werden als überladene Funktionen bezeichnet und ermöglichen es, verschiedene Varianten einer Funktion für unterschiedliche Anwendungsfälle zu definieren.</p>
+<pre><code class="language-cpp">
+// Überladene Funktionen für die Berechnung des Maximums von zwei Werten
+int max(int x, int y);
+double max(double x, double y);
+</code></pre>
+</div>
+</div>
+<br>
+
+<h2 id="fehlerbehandlung-und-debugging">Fehlerbehandlung und Debugging</h2>
+<div>
+<p>Bei der Entwicklung von C++-Anwendungen können Fehler auftreten, die zur Laufzeit zu Fehlern führen. Um diese Fehler zu finden und zu beheben, gibt es verschiedene Techniken zur Fehlerbehandlung und zum Debugging.</p>
+
+<h3 id="try-catch-blocks">Try-Catch-Blöcke</h3>
+<div>
+<p>Try-Catch-Blöcke werden verwendet, um Ausnahmen (Exceptions) zu behandeln, die während der Ausführung einer Anweisung oder einer Gruppe von Anweisungen auftreten können. Ein Try-Block enthält die Anweisungen, die möglicherweise eine Ausnahme auslösen können, während der entsprechende Catch-Block die Ausnahme behandelt.</p>
+<pre><code class="language-cpp">
+try {
+    // Code, der möglicherweise eine Ausnahme auslöst.
+} catch (ExceptionType e) {
+    // Code, der die Ausnahme behandelt.
+}
+</code></pre>
+</div>
+
+<h3 id="assertions">Assertions</h3>
+<div>
+<p>Assertions sind Anweisungen, die während der Ausführung einer Anwendung geprüft werden, um sicherzustellen, dass eine bestimmte Bedingung erfüllt ist. Wenn die Bedingung nicht erfüllt ist, wird eine Ausnahme ausgelöst und das Programm wird beendet.</p>
+<pre><code class="language-cpp">
+assert(expression);
+</code></pre>
+</div>
+
+<h3 id="debugging-tools">Debugging-Tools</h3>
+<div>
+<p>C++ verfügt über verschiedene Debugging-Tools, mit denen Entwickler Fehler in ihrem Code finden und beheben können. Zu den häufig verwendeten Tools gehören:</p>
+<ul>
+<li><strong>GDB:</strong> Ein Befehlszeilen-Debugger für C++, der auf verschiedenen Plattformen verfügbar ist.</li>
+<li><strong>Visual Studio Debugger:</strong> Ein grafischer Debugger, der in der Visual Studio-Entwicklungsumgebung enthalten ist.</li>
+<li><strong>Valgrind:</strong> Ein Tool zur Überprüfung von Speicherlecks und anderen Speicherproblemen.</li>
+</ul>
+</div>
+</div>
+<br>
+</div>
+
 
 
 <script src="./prism.js"></script>
@@ -466,6 +562,9 @@ Datentyp* pointerName = &VariableName;
             position: fixed;
             margin-top: 28px;
             margin-left: -280px;
+
+            max-height: calc(100vh - 56px);
+            overflow-y: auto;
         }
 
         aside > * {
@@ -507,6 +606,9 @@ Datentyp* pointerName = &VariableName;
            position: fixed;
            margin-top: 28px;
            margin-left: -350px;
+
+           max-height: calc(100vh - 96px);
+           overflow-y: auto;
        }
 
        aside > * {
