@@ -19,9 +19,9 @@
     <p><a href="#divariablen">Deklaration/ Initialisierung</a></p>
     <p><a href="#vvariablen">Verwendung</a></p>
 
-    <h1><a href="#bedingungenul">Bedingungen und Logik</a></h1>
-    <p><a href="#iebedingungenul">If-/ Else-Blöcke</a></p>
-    <p><a href="#sbedingungenul">Switch</a></p>
+    <h1><a href="#bedingungen-und-logik">Bedingungen und Logik</a></h1>
+    <p><a href="#if-else-bloecke">If-/ Else-Blöcke</a></p>
+    <p><a href="#switch">Switch</a></p>
 
     <h1><a href="#schleifen">Schleifen</a></h1>
     <p><a href="#while-schleife">While-Schleife</a></p>
@@ -46,10 +46,11 @@
 <p>Zusammenfassung der wichtigsten c++ elemente.</p>
 <br>
 
+<div id="content">
 <h2 id="programmstruktur">Programmstruktur</h2>
 <div>
-<p>Das Programm läuft zeilenweise von oben nach unten ab:</p>
-<pre><code class="language-cpp">
+    <p>Das Programm läuft zeilenweise von oben nach unten ab:</p>
+    <pre><code class="language-cpp">
 #include &ltiostream>
 
 int main() {
@@ -57,9 +58,9 @@ int main() {
     return 0;
 }
 </code></pre>
-<p>Die erste Zeile inkludiert eine Headerdatei welche für die ein und ausgabe im Programm wichtig ist. Sie wird daher immer benötigt.</p>
-<p>Die Funktion <code class="language-cpp">main()</code> enthält alle Anweisungen für das Programm.<br>
-Da sie vom Typ Integer ist, muss sie auch einen zurückgeben. Daher steht am ende der Funktion <code class="language-cpp">return 0;</code>.</p>
+    <p>Die erste Zeile inkludiert eine Headerdatei welche für die ein und ausgabe im Programm wichtig ist. Sie wird daher immer benötigt.</p>
+    <p>Die Funktion <code class="language-cpp">main()</code> enthält alle Anweisungen für das Programm.<br>
+        Da sie vom Typ Integer ist, muss sie auch einen zurückgeben. Daher steht am ende der Funktion <code class="language-cpp">return 0;</code>.</p>
 </div>
 <br>
 
@@ -88,15 +89,15 @@ Dies ist ein Kommentar
 Und er hat mehrere Zeilen
 */
 </code></pre>
-</div>
+    </div>
 </div>
 <br>
 
 <h2 id="operatoren">Operatoren</h2>
 <div>
-<p>Operatoren werden verwendet, um Datentypen zu verknüpfen oder zu verändern.</p>
-<p>Folgende sind die wichtigsten Operatoren:</p>
-<pre><code class="language-cpp">
+    <p>Operatoren werden verwendet, um Datentypen zu verknüpfen oder zu verändern.</p>
+    <p>Folgende sind die wichtigsten Operatoren:</p>
+    <pre><code class="language-cpp">
 =       // Zuweisungsoperator
 +       // Addition
 -       // Subtraktion
@@ -135,7 +136,7 @@ In folgendem Beispiel wird eine variable mit dem Datentyp <code class="language-
 <h4>Initialisierung (Wert Setzen)</h4>
 <div>
 <p>Die Initialisierung kann erst stattfinden, nachdem die Variable Deklariert wurde.<br>
-    In folgendem Beispiel wird dem zuvor erstellten Integer mit dem Namen <code class="language-cpp">myVariable</code> den wert <code class="language-cpp">43</code> gegeben:</p>
+In folgendem Beispiel wird dem zuvor erstellten Integer mit dem Namen <code class="language-cpp">myVariable</code> den wert <code class="language-cpp">43</code> gegeben:</p>
 <pre><code class="language-cpp">myVariable = 43;</code></pre>
 <p>Sollte dem Datentyp <code class="language-cpp">char</code> einen Wert zugewiesen werden, muss dieser in Hochkommata geschrieben werden:</p>
 <pre><code class="language-cpp">myChar = "a";</code></pre>
@@ -170,12 +171,12 @@ int main() {
 </div>
 <br>
 
-<h2 id="bedingungenul">Bedingungen und Logik</h2>
+<h2 id="bedingungen-und-logik">Bedingungen und Logik</h2>
 <div>
 <p>Um in einem Programm Logik zu verwenden gibt es verschiedene möglichkeiten.</p>
 <br>
 
-<h3 id="iebedingungenul">If-/ Else-Blöcke</h3>
+<h3 id="if-else-bloecke">If-/ Else-Blöcke</h3>
 <div>
 <h4>If</h4>
 <div>
@@ -232,21 +233,21 @@ if (myVariable == 420) {
 </div>
 <br>
 
-<h3 id="sbedingungenul">Switch</h3>
+<h3 id="switch">Switch</h3>
 <div>
 <p>Mit einem Switch können mehrere bedingungen gleichzeitig abgefragt werden.<br>
 Beispiel eines Switch:</p>
 <pre><code class="language-cpp">
 switch (myVariable){
-    case 420:
-        // Code wird ausgeführt wenn myVariable den Wert 420 hat.
-        break;
-    case 69:
-        // Code wird ausgeführt wenn myVariable den Wert 69 hat.
-        break;
-    default:
-        // Code wird ausgeführt wenn myVariable nicht den Wert 420 oder 69 hat.
-        break;
+case 420:
+    // Code wird ausgeführt wenn myVariable den Wert 420 hat.
+    break;
+case 69:
+    // Code wird ausgeführt wenn myVariable den Wert 69 hat.
+    break;
+default:
+    // Code wird ausgeführt wenn myVariable nicht den Wert 420 oder 69 hat.
+    break;
 </code></pre>
 </div>
 </div>
@@ -261,7 +262,7 @@ switch (myVariable){
 <p>Die while-Schleife führt eine Anweisung oder eine Gruppe von Anweisungen aus, solange die Bedingung wahr ist.<br>
 Dabei wird die Bedingung genau gleich gestaltet wie bei einem If-Block.</p>
 <pre><code class="language-cpp">
-    while (myBool) {
+while (myBool) {
     // Code ...
 }
 </code></pre>
@@ -324,6 +325,7 @@ Datentyp* pointerName = &VariableName;
 </code></pre>
 <br>
 </div>
+</div>
 
 
 <script src="./prism.js"></script>
@@ -331,6 +333,7 @@ Datentyp* pointerName = &VariableName;
     function myFunction(x) {
         document.getElementById('header-button').classList.toggle("change");
         document.getElementById('aside').classList.toggle("opened");
+        document.getElementById('content').classList.toggle("no-Scroll")
     }
 </script>
 
@@ -351,6 +354,8 @@ Datentyp* pointerName = &VariableName;
     code * {
         font-family: monospace, sans-serif !important;
     }
+
+
 
     @media only screen and (max-width: 800px) {
         .header {
@@ -434,6 +439,15 @@ Datentyp* pointerName = &VariableName;
             color: white;
         }
 
+        #content {
+            height: calc(100vh - (44px + 32px + 44px));
+
+            overflow: hidden;
+        }
+
+        .no-scroll {
+            overflow: hidden;
+        }
     }
 
     @media only screen and (min-width: 800px) {
