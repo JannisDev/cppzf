@@ -43,8 +43,6 @@
     </div>
 </div>
 <h1 class="header-text">C++ CheatSheet</h1>
-<p>Zusammenfassung der wichtigsten c++ elemente.</p>
-<br>
 
 <div id="content">
 <h2 id="programmstruktur">Programmstruktur</h2>
@@ -333,7 +331,7 @@ Datentyp* pointerName = &VariableName;
     function myFunction(x) {
         document.getElementById('header-button').classList.toggle("change");
         document.getElementById('aside').classList.toggle("opened");
-        document.getElementById('content').classList.toggle("no-Scroll")
+        document.getElementById('content').classList.toggle("no-scroll")
     }
 </script>
 
@@ -364,9 +362,10 @@ Datentyp* pointerName = &VariableName;
             justify-content: end;
             margin: 0 !important;
             width: 100vw;
-            height: 45px;
+            height: 50px;
             top: 0;
             z-index: 10000;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
         }
 
         .header-button {
@@ -374,12 +373,13 @@ Datentyp* pointerName = &VariableName;
             cursor: pointer;
             z-index: 10000;
             margin-right: 10px;
+            margin-top: 5px;
         }
 
         .bar1, .bar2, .bar3 {
             width: 35px;
             height: 5px;
-            background-color: #333;
+            background-color: #000;
             margin: 6px 0;
             transition: 0.4s;
             z-index: 10000;
@@ -398,12 +398,14 @@ Datentyp* pointerName = &VariableName;
         .header-text {
             margin: 0;
             padding-left: 15px;
-            line-height: 44px;
+            line-height: 50px;
+            height: 50px;
         }
 
         aside {
+            top: 50px;
             position: fixed;
-            height: 100vh;
+            height: calc(100vh - 50px);
             width: 0vw;
             background-color: white;
             overflow-x: hidden;
@@ -440,13 +442,12 @@ Datentyp* pointerName = &VariableName;
         }
 
         #content {
-            height: calc(100vh - (44px + 32px + 44px));
-
-            overflow: hidden;
+            height: calc(100vh - 50px);
+            overflow: auto;
         }
 
         .no-scroll {
-            overflow: hidden;
+            overflow: hidden !important;
         }
     }
 
